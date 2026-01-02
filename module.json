@@ -1,0 +1,11 @@
+{
+    "name": "RAG",
+    "alias": "rag",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\RAG\\Providers\\RAGServiceProvider"
+    ],
+    "files": []
+}
