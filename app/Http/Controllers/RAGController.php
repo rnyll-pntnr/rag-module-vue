@@ -140,25 +140,18 @@ class RAGController extends Controller
 
     private function getPrompt(string $context, string $query): string {
         return '
-        You are a knowledgeable AI assistant specializing in professional and fact-based responses.
-
-        Your task is to answer the following user question based solely on the provided context.
-        If the information is not explicitly stated in the context, respond with:
-        "I’m sorry, but the provided document does not contain sufficient information to answer that."
-
-        Context (relevant excerpts from the document):
-        ----------------------------------------
+        CONTEXT FROM DOCUMENTS:
+        ---------------------
         '.$context.'
-        ----------------------------------------
-
-        Question:
-        '.$query.'
-
-        Guidelines for your response:
-        1. Maintain a professional and factual tone.
-        2. Provide clear, concise, and structured explanations.
-        3. Avoid assumptions or invented details.
-        4. If applicable, summarize key points rather than quoting excessively.
+        ---------------------
+        
+        USER QUESTION: '.$query.'
+        
+        RESPONSE REQUIREMENTS:
+        - Provide the answer in a well-structured narrative format human-like responses.
+        - Use bullet points only when listing three or more distinct items; otherwise, use full paragraphs.
+        - Highlight the most relevant information using **bold text**.
+        - Ensure the transition between different points feels logical and cohesive.
         ';
     }
 
